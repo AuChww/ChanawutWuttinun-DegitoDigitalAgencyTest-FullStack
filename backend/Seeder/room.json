@@ -1,0 +1,5 @@
+[
+  { "room_id": 1, "room_name": "Standard A", "room_type_id": 1, "capacity": 2, "price": 1200, "hotel_id": 1 },
+  { "room_id": 2, "room_name": "Deluxe B", "room_type_id": 2, "capacity": 3, "price": 1800, "hotel_id": 1 },
+  { "room_id": 3, "room_name": "Suite C", "room_type_id": 3, "capacity": 4, "price": 3000, "hotel_id": 2 }
+]

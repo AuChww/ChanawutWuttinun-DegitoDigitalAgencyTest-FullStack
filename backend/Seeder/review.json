@@ -1,0 +1,5 @@
+[
+  { "review_id": 1, "booking_id": 1, "roomtype_id": 1, "user_id": 1, "house_keeping_rating": 4, "food_rating": 5, "service_rating": 5, "staff_rating": 5 },
+  { "review_id": 2, "booking_id": 2, "roomtype_id": 2, "user_id": 2, "house_keeping_rating": 3, "food_rating": 4, "service_rating": 4, "staff_rating": 4 },
+  { "review_id": 3, "booking_id": 3, "roomtype_id": 3, "user_id": 3, "house_keeping_rating": 5, "food_rating": 5, "service_rating": 5, "staff_rating": 5 }
+]

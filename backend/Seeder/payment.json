@@ -1,0 +1,5 @@
+[
+  { "payment_id": 1, "booking_id": 1, "amount": 1200, "discount": 0, "vat": 84, "status": "paid" },
+  { "payment_id": 2, "booking_id": 2, "amount": 1800, "discount": 100, "vat": 126, "status": "pending" },
+  { "payment_id": 3, "booking_id": 3, "amount": 3000, "discount": 200, "vat": 210, "status": "paid" }
+]

@@ -1,9 +1,11 @@
-const { hotels } = require('../Seeder/hotelSeeder');
 const Hotel = require('../Entity/hotelEntity');
+const hotelsData = require('../Seeder/hotel.json');
 
 class HotelRepository {
   constructor() {
-    this.hotels = hotels;
+    this.hotels = hotelsData.map(
+      h => new Hotel(h.hotel_id, h.hotel_name, h.location)
+    );
   }
 
   getAllHotels() {
@@ -11,13 +13,11 @@ class HotelRepository {
   }
 
   getHotelById(id) {
-    return this.hotels.find(hotel => hotel.hotel_id === id);
+    return this.hotels.find(h => h.hotel_id === id);
   }
 
   addHotel(hotelData) {
-    const newId = this.hotels.length > 0 
-      ? this.hotels[this.hotels.length - 1].hotel_id + 1 
-      : 1;
+    const newId = this.hotels.length + 1;
     const newHotel = new Hotel(newId, hotelData.hotel_name, hotelData.location);
     this.hotels.push(newHotel);
     return newHotel;

@@ -1,0 +1,17 @@
+[
+  {
+    "hotel_id": 1,
+    "hotel_name": "Bangkok Palace Hotel",
+    "location": "Bangkok"
+  },
+  {
+    "hotel_id": 2,
+    "hotel_name": "Chiang Mai Riverside Resort",
+    "location": "Chiang Mai"
+  },
+  {
+    "hotel_id": 3,
+    "hotel_name": "Phuket Beach Resort",
+    "location": "Phuket"
+  }
+]

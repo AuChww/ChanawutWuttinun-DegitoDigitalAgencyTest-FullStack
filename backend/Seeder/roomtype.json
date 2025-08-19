@@ -1,0 +1,5 @@
+[
+  { "roomtype_id": 1, "roomtype_name": "Standard" },
+  { "roomtype_id": 2, "roomtype_name": "Deluxe" },
+  { "roomtype_id": 3, "roomtype_name": "Suite" }
+]

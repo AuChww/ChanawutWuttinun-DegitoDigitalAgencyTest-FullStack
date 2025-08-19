@@ -1,0 +1,5 @@
+[
+  { "booking_id": 1, "hotel_id": 1, "room_id": 1, "user_id": 1, "check_in": "2025-09-01", "check_out": "2025-09-05", "people": 2 },
+  { "booking_id": 2, "hotel_id": 1, "room_id": 2, "user_id": 2, "check_in": "2025-09-10", "check_out": "2025-09-12", "people": 3 },
+  { "booking_id": 3, "hotel_id": 2, "room_id": 3, "user_id": 3, "check_in": "2025-09-20", "check_out": "2025-09-25", "people": 4 }
+]
