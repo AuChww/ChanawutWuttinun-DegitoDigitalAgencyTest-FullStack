@@ -6,6 +6,10 @@ class RoomRepository {
     return rooms.filter(r => r.hotel_id === hotelId);
   }
 
+  getRoomById(roomId) {
+    return rooms.filter(r => r.room_id === roomId);
+  }
+
   filterRooms({ location, checkin, checkout, capacity }) {
     let hotelIds = hotels
       .filter(h => !location || h.location === location)

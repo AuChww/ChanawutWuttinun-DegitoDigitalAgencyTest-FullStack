@@ -9,6 +9,11 @@ router.get('/api/getRoomByHotelId/:id', (req, res) => {
   res.json(rooms);
 });
 
+router.get('/api/getRoomById/:id', (req, res) => {
+  const rooms = roomService.getRoomByHotelId(parseInt(req.params.id));
+  res.json(rooms);
+});
+
 // GET rooms with filter
 router.get('/', (req, res) => {
   const { location, checkin, checkout, capacity } = req.query;
