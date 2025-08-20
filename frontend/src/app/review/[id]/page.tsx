@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import ReviewList from "../../../../component/reviewList";
 import RoomList from "../../../../component/roomList";
 import SearchBar from "../../../../component/searchBar";
+import { useSearch } from "../../../../context/searchContext";
 
 interface Room {
   id: number;
@@ -32,6 +33,7 @@ interface Hotel {
 }
 
 const ReviewPage: React.FC = () => {
+  const { keyword, location, checkIn, checkOut, capacity } = useSearch();
   const { id } = useParams();
   const [hotel, setHotel] = useState<Hotel | null>(null);
   const [loading, setLoading] = useState(true);
@@ -51,6 +53,22 @@ const ReviewPage: React.FC = () => {
 
     if (id) fetchHotel();
   }, [id]);
+
+  useEffect(() => {
+    console.log("ค่าที่ส่งมาจาก SearchBar:", {
+      keyword,
+      location,
+      checkIn,
+      checkOut,
+      capacity,
+    });
+
+    if (location !== "" || keyword !== "") {
+      fetch(`/api/searchHotels?keyword=${keyword}&location=${location}`)
+        .then((res) => res.json())
+        .then((data) => console.log("ผลลัพธ์จาก API:", data));
+    }
+  }, [keyword, location, checkIn, checkOut, capacity]);
 
   if (loading) {
     return (
@@ -84,9 +102,7 @@ const ReviewPage: React.FC = () => {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className='ml-24'>
-            <SearchBar value={''} onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
-                throw new Error('Function not implemented.');
-            } }/>
+            <SearchBar />
         </div>
       <div className="md:ml-24 flex gap-x-2">
         <div className="w-2/3">

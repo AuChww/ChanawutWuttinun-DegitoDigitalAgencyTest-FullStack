@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearch } from "../../../context/searchContext";
+import { useRouter } from "next/navigation";
 
 interface Hotel {
   id: number;
@@ -16,6 +17,7 @@ interface Hotel {
 export default function Explore() {
   const { keyword, location, checkIn, checkOut, capacity, setSearch } = useSearch();
   const [hotels, setHotels] = useState<Hotel[]>([]);
+  const router = useRouter();
 
   const [placeholders, setPlaceholders] = useState({
     location: "Where are you going?",
@@ -61,6 +63,8 @@ export default function Explore() {
 
     console.log("Search result:", result);
 
+    setSearch(result);
+
     // update placeholders
     setPlaceholders({
       location: result.location,
@@ -68,6 +72,8 @@ export default function Explore() {
       checkOut: result.checkOut,
       capacity: result.capacity,
     });
+
+    router.push("/hotel");
   };
 
   return (

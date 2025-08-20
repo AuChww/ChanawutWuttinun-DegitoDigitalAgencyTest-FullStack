@@ -10,7 +10,7 @@ router.get('/api/getRoomByHotelId/:id', (req, res) => {
 });
 
 router.get('/api/getRoomById/:id', (req, res) => {
-  const rooms = roomService.getRoomByHotelId(parseInt(req.params.id));
+  const rooms = roomService.getRoomById(parseInt(req.params.id));
   res.json(rooms);
 });
 
